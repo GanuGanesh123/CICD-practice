@@ -1,1 +1,20 @@
+name: CI/CD Pipeline
 
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print message
+        run:  echo "printing sum of two numbers"
+      - name: Run Tests
+        run: pyhton test.py
+
+  
