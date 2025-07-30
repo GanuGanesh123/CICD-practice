@@ -1,16 +1,11 @@
-from sum import addtwo 
 
-def testaddtwo():
+from sum import addtwo  
+
+def test_addtwo_function(): # Renamed to follow 'test_' convention
     testdata_a = 20
     testdata_b = 30
     expected = 50
     actual = addtwo(testdata_a, testdata_b)
 
-    if actual == expected:
-      print("passed")
-    else:
-      print("failed")
-
-testaddtwo()
-
-  
+    assert actual == expected
+    # pass or fail
