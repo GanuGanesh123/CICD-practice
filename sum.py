@@ -1,4 +1,4 @@
-def addtwo(a:int, b:int) -> int:
+def addtwo(a, b):
   return a+b
 
 
