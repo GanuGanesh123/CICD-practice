@@ -1,3 +1,5 @@
+# .github/workflows/ci-cd-pipeline.yml
+
 name: CI/CD Pipeline
 
 on:
@@ -7,22 +9,23 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 
+        uses: actions/checkout@v4
+
       - name: Set up Python
-        uses: actions/setup-python@v5 
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.12.5' 
+          python-version: '3.12.5'
 
       - name: print message
-        run: echo "printing sum of two numbers"
+        run: echo "Starting tests..."
 
       - name: Run Tests
-        run: python3 test.py
-
-  
+        # Now, this will run pytest, which will find and execute your test_addtwo_function
+        run: pytest
