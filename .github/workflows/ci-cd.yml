@@ -15,6 +15,6 @@ jobs:
       - name: print message
         run:  echo "printing sum of two numbers"
       - name: Run Tests
-        run: pyhton test.py
+        run: python3 test.py
 
   
