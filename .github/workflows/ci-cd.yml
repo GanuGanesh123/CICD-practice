@@ -28,4 +28,4 @@ jobs:
 
       - name: Run Tests
         # Now, this will run pytest, which will find and execute your test_addtwo_function
-        run: pytest
+        run: python3 test.py
