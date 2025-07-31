@@ -1,6 +1,5 @@
 # .github/workflows/ci-cd-pipeline.yml
 
-
 name: CI/CD Pipeline
 
 on:
@@ -25,5 +24,8 @@ jobs:
 
       - name: print message
         run: echo "Starting tests..."
-      - name: Run Tests
-        run: python3 test.py
+      - name: install libraries
+        run: pip3 install -r requirements.txt
+      - name: Run Pandas
+        # Now, this will run pytest, which will find and execute your test_addtwo_function
+        run: python3 data_generator.py
