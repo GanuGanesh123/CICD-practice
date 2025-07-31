@@ -17,15 +17,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12.5'
+      - name: Docker build
+        run: docker build -t cicd-image:v1 .
 
       - name: print message
-        run: echo "Starting tests..."
-      - name: install libraries
-        run: pip3 install -r requirements.txt
-      - name: Run Pandas
-        # Now, this will run pytest, which will find and execute your test_addtwo_function
-        run: python3 data_generator.py
+        run: docker images
