@@ -1,4 +1,5 @@
 import pandas as pd
+#import time
 # import statement
 data = {
         'Name': ['Sai', 'venkat', 'John'],
@@ -8,3 +9,4 @@ data = {
 
 df = pd.DataFrame(data)
 print(df.shape)
+#time.sleep(200)
