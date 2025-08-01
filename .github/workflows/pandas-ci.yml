@@ -24,8 +24,7 @@ jobs:
         run: docker run cicd-image:v1
 
       - name: Docker Login
-        run: echo " Docker loggined "
-	
+        run: echo "Docker loggined"
       - name: Docker Push
         run: echo "Docker push into remote contanier repository"
 
