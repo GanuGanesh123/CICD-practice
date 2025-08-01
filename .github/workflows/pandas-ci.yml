@@ -29,7 +29,7 @@ jobs:
         run: echo "Docker push into remote contanier repository"
 
       - name: Provisioning Deployment machine
-        run: echo "Turned on deployment Machine"
+        run: echo "Turned on deployment Machine as per the Deployconfig in automated way"
 
       - name: Docker Login
         run: echo "Logging into remote contanier repository( Docker Hub )"
