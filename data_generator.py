@@ -1,4 +1,5 @@
 import pandas as pd
+#import time
 # import statement
 import sys
 data = {
@@ -9,5 +10,7 @@ data = {
 
 df = pd.DataFrame(data)
 print(df.shape)
+
 print(sys.getsizeof(df))
 
+print("printed sai")

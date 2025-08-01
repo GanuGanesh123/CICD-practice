@@ -17,15 +17,26 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12.5'
+      - name: Docker build
+        run: docker build -t cicd-image:v1 .
 
-      - name: print message
-        run: echo "Starting tests..."
-      - name: install libraries
-        run: pip3 install -r requirements.txt
-      - name: Run Pandas
-        # Now, this will run pytest, which will find and execute your test_addtwo_function
-        run: python3 data_generator.py
+      - name: Docker Run testlocal
+        run: docker run cicd-image:v1
+
+      - name: Docker Login
+        run: echo "Docker loggined"
+      - name: Docker Push
+        run: echo "Docker push into remote contanier repository"
+
+      - name: Provisioning Deployment machine
+        run: echo "Turned on deployment Machine"
+
+      - name: Docker Login
+        run: echo "Logging into remote contanier repository( Docker Hub )"
+
+      - name: Docker Pull
+        run: echo "Pulling Docker image"
+
+      - name: Running Docker Image
+        run: echo "Docker Image running"
+
