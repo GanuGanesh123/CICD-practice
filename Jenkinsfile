@@ -1,11 +1,21 @@
 pipeline {
     agent any
+
     stages {
-        stage('Build and Test') {
+        stage('Install Dependencies') {
             steps {
-                checkout scm
-                sh 'echo "Starting tests..."'
-                sh 'python3 test.py'
+                // It's good practice to create a virtual environment first.
+                sh 'python3 -m venv venv'
+                sh 'source venv/bin/activate'
+
+                // Install pytest. You should also install your project's dependencies here.
+                sh 'pip install pytest'
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                sh 'source venv/bin/activate'
+                sh 'pytest'
             }
         }
     }
