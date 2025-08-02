@@ -1,15 +1,12 @@
 pipeline {
-  agent any
-  stages {
-    stage('version') {
-      steps {
-        sh 'python3 --version'
-      }
+    agent any
+    stages {
+        stage('Build and Test') {
+            steps {
+                checkout scm
+                sh 'echo "Starting tests..."'
+                sh 'python3 test.py'
+            }
+        }
     }
-    stage('test') {
-      steps {
-        sh 'python3 test.py'
-      }
-    }
-  }
 }
