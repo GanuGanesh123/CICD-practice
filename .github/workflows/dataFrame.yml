@@ -19,7 +19,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
          python-version: '3.12.5'
-
+      - name: Install Librareis
+        run: pip3 install -r requirements.txt
       - name: print message
         run: echo "Staring test..."
       - name: Run Tests
