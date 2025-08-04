@@ -4,7 +4,7 @@ import requests
 number1 = st.number_input("Enter the first number:")
 number2 = st.number_input("Enter the second number:")
 
-url = "http://127.0.0.1:5000/addtwointegers"
+url = "https://ganuganesh.pythonanywhere.com/addtwointegers"
 testdata_c = 100
 testdata_d = 4.5
 
