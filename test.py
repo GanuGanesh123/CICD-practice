@@ -9,3 +9,4 @@ def test_addtwo_function(): # Renamed to follow 'test_' convention
 
     assert actual == expected
     # pass or fail
+test_addtwo_function()
