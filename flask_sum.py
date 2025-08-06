@@ -2,11 +2,12 @@ from flask import Flask, request
 import pandas as pd
 import requests
 app = Flask(__name__)
-
+import time
    
 
 @app.route('/addtwointegers/<int:c>/<float:d>', methods=['POST'])
 def addtwo(c,d):
+  time.sleep(5)
   print(request)
   print(request.json)
   a = request.json.get('a')
