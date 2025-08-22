@@ -1,6 +1,7 @@
 import json
 import uuid
 import pandas as pd
+import sqlite3
 
 from flask import Flask, request
 app = Flask(__name__)
@@ -30,6 +31,48 @@ def save_into_csv():
    df.loc[index_to_insert] = [a, b]
    df.to_csv("DB/CSV/requests.csv", index=False)
    return {"response": "Success"}
+
+@app.route('users/')
+def write_to_sql_db(request_payload: dict):
+   # or load .db file
+   conn = sqlalchmey.connect(host_ip, port)
+   sqlalchmey.write(f"INSERT INTO USERS {request_payload["a"], request_payload["b"], uuid.uuid4()}", conn)
+
+
+@app.route('intermediatevalues/')
+def write_to_sql_db_squares(request_payload: dict):
+   sqlalchmey.write(f"INSERT INTO USERS {request_payload["a"], request_payload["b"], uuid.uuid4()}")
+
+
+class UsersDBAPI:
+
+   def _init(self):
+      self.conn = sqlalachemy.coonect(host_ip, port)
+
+   @app.route()
+   def write_raw_users():
+      pass
+
+
+   def read_raw_users():
+      pass
+
+class IntermediateValuesDBI:
+      def _init(self):
+      self.conn = sqlalachemy.coonect(host_ip, port)
+
+   @app.route()
+   def write_raw_users():
+      pass
+
+
+   def read_raw_users():
+      pass
+
+
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
